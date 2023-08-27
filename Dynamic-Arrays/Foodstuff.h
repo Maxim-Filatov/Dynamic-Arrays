@@ -10,6 +10,7 @@ class Foodstuff: public Product {
 		int foodId;
 	public:
 		Foodstuff();
+		Foodstuff(int id);
 		void setFoodId(int foodId);
 		int getFoodId();
 		~Foodstuff();

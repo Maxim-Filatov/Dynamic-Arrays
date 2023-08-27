@@ -11,6 +11,10 @@ Foodstuff::Foodstuff() {
 	foodId = 0;
 }
 
+Foodstuff::Foodstuff(int id) {
+	foodId = id;
+}
+
 // Functions for accessing the private variable
 void Foodstuff::setFoodId(int foodId) {
 	this->foodId = foodId;

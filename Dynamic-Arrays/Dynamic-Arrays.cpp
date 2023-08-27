@@ -31,7 +31,7 @@ float fillArray(vector<Foodstuff>& f1, vector<Foodstuff>& f2) {
     float sum = 0;
     // Fill the first vector with objects
     for (int i = 0; i < 1000; i++) {
-        f1.push_back(Foodstuff());
+        f1.push_back(Foodstuff(i));
         // Give a random price to the Foodstuff object (from 100 to 1000)
         f1[i].setPrice((float)(100 + (rand() % 1000)));
         // Calculate the total purchase sum
@@ -51,15 +51,15 @@ float addElements(vector<Foodstuff>& f1) {
     int index, size;
     std::vector<Foodstuff>::const_iterator iter;
     size = f1.size();
-    index = (int)size / 2 - 1;
-    iter = f1.cbegin();
+    index = (int)size / 2;
     for (int i = index; i < size; i++) {
+        iter = f1.cbegin();
         // Add a new element to the first vector
-        f1.emplace(iter + i, Foodstuff());
+        f1.emplace(iter + index, Foodstuff(i));
         //Give a random price to the Foodstuff object (from 100 to 1000)
-        f1[i].setPrice((float)(100 + (rand() % 1000)));
+        f1[index].setPrice((float)(100 + (rand() % 1000)));
         // Calculate the total purchase sum
-        sum += f1[i].getPrice();
+        sum += f1[index].getPrice();
     }
     return sum;
 }
